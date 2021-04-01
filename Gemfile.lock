@@ -142,7 +142,7 @@ GEM
     ruby-xxHash (0.4.0.1)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
-    sequel (5.42.0)
+    sequel (5.43.0)
     systemu (2.6.5)
     thread_safe (0.3.6)
     typhoeus (1.4.0)
