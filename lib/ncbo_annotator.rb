@@ -122,19 +122,30 @@ module Annotator
         all = redis.hgetall(dict_holder)
         # Create dict file
         outFile = File.new(Annotator.settings.mgrep_dictionary_file, "w")
-
+        @logger.info("Generating a dictionary file using #{all.keys.length} key/value pairs.")
         prefix_remove = Regexp.new(/^#{IDPREFIX.call(cur_inst)}/)
         windows_linebreak_remove = Regexp.new(/\r\n/)
         special_remove = Regexp.new(/[\r\n\t]/)
 
-        all.each do |key, val|
-          realKey = key.sub prefix_remove, ''
-          realVal = val.gsub(windows_linebreak_remove, ' ').gsub(special_remove, ' ')
-          outFile.puts("#{realKey}\t#{realVal}")
-          outFile.flush
+        time = Benchmark.realtime do
+          total_generated = 0
+          info_step = 100
+
+          all.each do |key, val|
+            realKey = key.sub prefix_remove, ''
+            realVal = val.gsub(windows_linebreak_remove, ' ').gsub(special_remove, ' ')
+            outFile.puts("#{realKey}\t#{realVal}")
+            outFile.flush
+
+            total_generated += 1
+            @logger.info("Generated #{total_generated} records. #{all.keys.length - total_generated} remaining...") if total_generated % info_step == 0
+          end
+
+          outFile.close
+          redis_mgrep_dict_refresh_timestamp()
         end
-        outFile.close
-        redis_mgrep_dict_refresh_timestamp()
+
+        @logger.info("Completed generating a dictionary file in #{(time/60).round(1)} minutes.")
       end
 
       def create_term_cache_from_ontologies(ontologies, delete_cache=false, redis_prefix=nil)
