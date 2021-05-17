@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 6edc8e050c45274d061ca3f950cc373aaf376c82
+  revision: ec4cdd64e2cb728236067b1349209f6b17b154e0
   branch: staging
   specs:
     goo (0.0.2)
@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 811602f94026ce79c8410f6ecbe6023fd59975a1
+  revision: 71a5ca8f757429b0a8f22ca04f32efc5660e79bb
   branch: staging
   specs:
     ontologies_linked_data (0.0.1)
@@ -146,7 +146,7 @@ GEM
     ruby-xxHash (0.4.0.1)
     ruby2_keywords (0.0.4)
     rubyzip (2.3.0)
-    sequel (5.43.0)
+    sequel (5.44.0)
     systemu (2.6.5)
     thread_safe (0.3.6)
     typhoeus (1.4.0)
