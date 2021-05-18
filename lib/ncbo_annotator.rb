@@ -129,7 +129,7 @@ module Annotator
 
         time = Benchmark.realtime do
           total_generated = 0
-          info_step = 100
+          info_step = 10000
 
           all.each do |key, val|
             realKey = key.sub prefix_remove, ''
