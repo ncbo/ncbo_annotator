@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rake', '~> 10.0'
+gem 'rake', '~> 12.3'
 gem 'redis'
 gem 'minitest', '~> 4.0'
 gem 'cube-ruby', require: "cube"
