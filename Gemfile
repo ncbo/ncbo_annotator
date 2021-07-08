@@ -5,7 +5,7 @@ gem 'redis'
 gem 'minitest', '~> 4.0'
 gem 'cube-ruby', require: "cube"
 gem 'ruby-xxHash'
-gem 'ffi', '< 1.9.22'
+gem 'ffi', '< 1.9.25'
 
 # Development
 gem 'pry', group: :development

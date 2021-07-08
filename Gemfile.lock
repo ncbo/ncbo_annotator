@@ -102,7 +102,7 @@ GEM
     faraday-net_http (1.0.1)
     faraday-net_http_persistent (1.1.0)
     faraday-patron (1.0.0)
-    ffi (1.9.21)
+    ffi (1.9.24)
     http-accept (1.7.0)
     http-cookie (1.0.4)
       domain_name (~> 0.5)
@@ -172,7 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   cube-ruby
-  ffi (< 1.9.22)
+  ffi (< 1.9.25)
   goo!
   minitest (~> 4.0)
   ncbo_resource_index!
