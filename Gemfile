@@ -1,11 +1,10 @@
-source 'https://rubygems.org'
-
 gem 'rake', '~> 10.0'
 gem 'redis'
 gem 'minitest', '~> 4.0'
 gem 'cube-ruby', require: "cube"
 gem 'ruby-xxHash'
 gem 'ffi', '< 1.9.22'
+gem 'oj', '~> 2.0'
 
 # Development
 gem 'pry', group: :development
