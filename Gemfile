@@ -6,6 +6,7 @@ gem 'minitest', '~> 4.0'
 gem 'rake', '~> 10.0'
 gem 'redis'
 gem 'ruby-xxHash'
+gem 'oj', '~> 2.0'
 
 # Development
 gem 'pry', group: :development
