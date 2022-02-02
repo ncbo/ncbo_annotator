@@ -1,3 +1,9 @@
+source 'https://rubygems.org'
+
+gem 'cube-ruby', require: 'cube'
+gem 'faraday', '~> 1.9'
+gem 'ffi'
+gem 'minitest', '~> 4.0'
 gem 'rake', '~> 10.0'
 gem 'redis'
 gem 'minitest', '~> 4.0'
