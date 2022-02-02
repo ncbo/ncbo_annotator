@@ -1,0 +1,173 @@
+GIT
+  remote: https://github.com/ncbo/goo.git
+  revision: 37996775b44ec673e7371b6f34220329c1026558
+  branch: staging
+  specs:
+    goo (0.0.2)
+      addressable (= 2.3.5)
+      pry
+      rdf (= 1.0.8)
+      redis
+      rest-client
+      rsolr
+      sparql-client
+      systemu
+      uuid
+
+GIT
+  remote: https://github.com/ncbo/ontologies_linked_data.git
+  revision: e4d48a776a57545a4aeb079223d7c8ab05f088f7
+  branch: staging
+  specs:
+    ontologies_linked_data (0.0.1)
+      activesupport
+      bcrypt
+      goo
+      json
+      libxml-ruby
+      multi_json
+      ncbo_resource_index
+      oj
+      omni_logger
+      pony
+      rack
+      rack-test
+      rsolr
+      rubyzip
+
+GIT
+  remote: https://github.com/ncbo/resource_index.git
+  revision: 24a7f14a6da4f4a0eaba1016ca5a378dfccd7441
+  specs:
+    ncbo_resource_index (0.0.1)
+      elasticsearch (= 2.0.0)
+      mysql2 (= 0.5.2)
+      pony
+      ref
+      ruby-xxHash
+      sequel
+      typhoeus
+
+GIT
+  remote: https://github.com/ncbo/sparql-client.git
+  revision: d8200c767956797970f771962df8dc60e048719d
+  branch: staging
+  specs:
+    sparql-client (1.0.1)
+      json_pure (>= 1.4)
+      net-http-persistent (= 2.9.4)
+      rdf (>= 1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.0.13)
+      i18n (~> 0.6, >= 0.6.9)
+      minitest (~> 4.2)
+      multi_json (~> 1.3)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    addressable (2.3.5)
+    bcrypt (3.1.16)
+    builder (3.2.4)
+    coderay (1.1.3)
+    concurrent-ruby (1.1.9)
+    cube-ruby (0.0.3)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    elasticsearch (2.0.0)
+      elasticsearch-api (= 2.0.0)
+      elasticsearch-transport (= 2.0.0)
+    elasticsearch-api (2.0.0)
+      multi_json
+    elasticsearch-transport (2.0.0)
+      faraday
+      multi_json
+    ethon (0.15.0)
+      ffi (>= 1.15.0)
+    faraday (2.1.0)
+      faraday-net_http (~> 2.0)
+      ruby2_keywords (>= 0.0.4)
+    faraday-net_http (2.0.1)
+    ffi (1.15.5)
+    http-accept (1.7.0)
+    http-cookie (1.0.4)
+      domain_name (~> 0.5)
+    i18n (0.9.5)
+      concurrent-ruby (~> 1.0)
+    json (2.6.1)
+    json_pure (2.6.1)
+    libxml-ruby (3.2.2)
+    logger (1.5.0)
+    macaddr (1.7.2)
+      systemu (~> 2.6.5)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    method_source (1.0.0)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
+    mini_mime (1.1.2)
+    minitest (4.7.5)
+    multi_json (1.15.0)
+    mysql2 (0.5.2)
+    net-http-persistent (2.9.4)
+    netrc (0.11.0)
+    oj (2.18.5)
+    omni_logger (0.1.4)
+      logger
+    pony (1.13.1)
+      mail (>= 2.0)
+    pry (0.14.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    rack (2.2.3)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    rake (10.5.0)
+    rdf (1.0.8)
+      addressable (>= 2.2)
+    redis (4.5.1)
+    ref (2.0.0)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rsolr (2.4.0)
+      builder (>= 2.1.2)
+      faraday (>= 0.9.0)
+    ruby-xxHash (0.4.0.2)
+    ruby2_keywords (0.0.5)
+    rubyzip (2.3.2)
+    sequel (5.53.0)
+    systemu (2.6.5)
+    thread_safe (0.3.6)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
+    tzinfo (0.3.60)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8)
+    uuid (2.3.9)
+      macaddr (~> 1.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  cube-ruby
+  ffi
+  goo!
+  minitest (~> 4.0)
+  ncbo_resource_index!
+  oj (~> 2.0)
+  ontologies_linked_data!
+  pry
+  rake (~> 10.0)
+  redis
+  ruby-xxHash
+  sparql-client!
+
+BUNDLED WITH
+   2.1.4
