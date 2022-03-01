@@ -16,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 3b953fd77247b8add5e68153a53cbcd13dbfbe20
+  revision: 42a8f7e2e94599fc43b810e402f15efde73230cc
   branch: staging
   specs:
     ontologies_linked_data (0.0.1)
@@ -85,7 +85,7 @@ GEM
       multi_json
     ethon (0.15.0)
       ffi (>= 1.15.0)
-    faraday (1.9.3)
+    faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -154,13 +154,13 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rsolr (2.4.0)
+    rsolr (2.5.0)
       builder (>= 2.1.2)
-      faraday (>= 0.9.0)
+      faraday (>= 0.9, < 3, != 2.0.0)
     ruby-xxHash (0.4.0.2)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sequel (5.53.0)
+    sequel (5.54.0)
     systemu (2.6.5)
     thread_safe (0.3.6)
     typhoeus (1.4.0)
