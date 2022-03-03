@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  unit-test:
+    build: .
+    environment:
+      - GOO_BACKEND_NAME=4store
+      - GOO_PORT=9000
+      - GOO_HOST=4store-ut
+      - REDIS_HOST=redis-ut
+      - REDIS_PORT=6379
+      - SOLR_HOST=solr-ut
+      - MGREP_HOST=mgrep-ut
+      - MGREP_PORT=55555
+    depends_on:
+      - solr-ut
+      - redis-ut
+      - 4store-ut
+      - mgrep-ut
+    command: "wait-for-it solr-ut:8983 -- bundle exec rake test TESTOPTS='-v'"
+
+  solr-ut:
+    image: ontoportal/solr-ut:0.1
+
+  redis-ut:
+    image: redis
+
+  mgrep-ut:
+    image: ontoportal/mgrep-ncbo:0.1
+
+  4store-ut:
+    image: bde2020/4store
+    command: >
+      bash -c "4s-backend-setup --segments 4 ontoportal_kb
+      && 4s-backend ontoportal_kb
+      && 4s-httpd -D -s-1 -p 9000 ontoportal_kb"
+
