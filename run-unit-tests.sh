@@ -1,8 +1,8 @@
 #!/bin/bash
 # sample script for running unit tests in docker.  This functionality should be moved to a rake task
 #
-# generate solr configsets
-#solr/generate_ncbo_configsets.sh
+# add config for unit testing
+[ -f config/config.rb ] || cp config/config.rb.test config/config.rb
 docker-compose build
 #docker-compose up --exit-code-from unit-test
 
