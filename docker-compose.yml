@@ -17,7 +17,7 @@ services:
       - redis-ut
       - 4store-ut
       - mgrep-ut
-    command: "wait-for-it solr-ut:8983 -- bundle exec rake test TESTOPTS='-v'"
+    command: "bundle exec rake test TESTOPTS='-v'"
 
   solr-ut:
     image: ontoportal/solr-ut:0.1
