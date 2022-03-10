@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: ed6283cb05a2e5a003d11c80cd63661533b98141
+  revision: 9aa06b55b82e1168d1a842ec797dca464f8fc947
   branch: develop
   specs:
     goo (0.0.2)
@@ -16,8 +16,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 23e41f7ca3e4f55ded008ad889d678006342f56e
-  branch: develop
+  revision: dac406167b740576dd43eecbd5ae85e15bc3de9e
+  branch: remove_ncbo_resource_index
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -26,7 +26,6 @@ GIT
       json
       libxml-ruby
       multi_json
-      ncbo_resource_index
       oj
       omni_logger
       pony
@@ -34,19 +33,6 @@ GIT
       rack-test
       rsolr
       rubyzip
-
-GIT
-  remote: https://github.com/ncbo/resource_index.git
-  revision: 24a7f14a6da4f4a0eaba1016ca5a378dfccd7441
-  specs:
-    ncbo_resource_index (0.0.1)
-      elasticsearch (= 2.0.0)
-      mysql2 (= 0.5.2)
-      pony
-      ref
-      ruby-xxHash
-      sequel
-      typhoeus
 
 GIT
   remote: https://github.com/ncbo/sparql-client.git
@@ -75,16 +61,6 @@ GEM
     cube-ruby (0.0.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    elasticsearch (2.0.0)
-      elasticsearch-api (= 2.0.0)
-      elasticsearch-transport (= 2.0.0)
-    elasticsearch-api (2.0.0)
-      multi_json
-    elasticsearch-transport (2.0.0)
-      faraday
-      multi_json
-    ethon (0.15.0)
-      ffi (>= 1.15.0)
     faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -130,7 +106,6 @@ GEM
     minitest (4.7.5)
     multi_json (1.15.0)
     multipart-post (2.1.1)
-    mysql2 (0.5.2)
     net-http-persistent (2.9.4)
     netrc (0.11.0)
     oj (2.18.5)
@@ -148,7 +123,6 @@ GEM
     rdf (1.0.8)
       addressable (>= 2.2)
     redis (4.6.0)
-    ref (2.0.0)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -160,11 +134,8 @@ GEM
     ruby-xxHash (0.4.0.2)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sequel (5.54.0)
     systemu (2.6.5)
     thread_safe (0.3.6)
-    typhoeus (1.4.0)
-      ethon (>= 0.9.0)
     tzinfo (0.3.60)
     unf (0.1.4)
       unf_ext
@@ -181,7 +152,6 @@ DEPENDENCIES
   ffi
   goo!
   minitest (~> 4.0)
-  ncbo_resource_index!
   oj (~> 2.0)
   ontologies_linked_data!
   pry
