@@ -5,6 +5,8 @@ RUN apt-get update -yqq && apt-get install -yqq --no-install-recommends openjdk-
 RUN mkdir -p /srv/ontoportal/ncbo_annotator
 COPY Gemfile* /srv/ontoportal/ncbo_annotator/
 WORKDIR /srv/ontoportal/ncbo_annotator
-RUN gem install bundler -v "$(grep -A 1 "BUNDLED WITH" Gemfile.lock | tail -n 1)"
+RUN gem install bundler
+ENV BUNDLE_PATH /bundle
 RUN bundle install
 COPY . /srv/ontoportal/ncbo_annotator
+CMD ["/bin/bash"]

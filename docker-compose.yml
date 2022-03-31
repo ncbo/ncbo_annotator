@@ -1,9 +1,13 @@
 version: '3.8'
 
 services:
-  unit-test:
+  dev:
     build: .
+    volumes:
+      - bundle:/bundle
+      - .:/srv/ontoportal/ncbo_annotator
     environment:
+      - BUNDLE_PATH=/bundle
       - GOO_BACKEND_NAME=4store
       - GOO_PORT=9000
       - GOO_HOST=4store-ut
@@ -35,3 +39,5 @@ services:
       && 4s-backend ontoportal_kb
       && 4s-httpd -D -s-1 -p 9000 ontoportal_kb"
 
+volumes:
+  bundle:
