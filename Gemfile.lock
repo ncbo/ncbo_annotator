@@ -16,8 +16,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: dac406167b740576dd43eecbd5ae85e15bc3de9e
-  branch: remove_ncbo_resource_index
+  revision: ed6666eee52e973ebe43360c08c9692902a719b4
+  branch: develop
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -54,10 +54,10 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
-    bcrypt (3.1.16)
+    bcrypt (3.1.17)
     builder (3.2.4)
     coderay (1.1.3)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     cube-ruby (0.0.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
@@ -93,7 +93,7 @@ GEM
     json (2.6.1)
     json_pure (2.6.1)
     libxml-ruby (3.2.2)
-    logger (1.5.0)
+    logger (1.5.1)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
     mail (2.7.1)
