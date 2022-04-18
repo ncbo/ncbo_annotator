@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 9aa06b55b82e1168d1a842ec797dca464f8fc947
+  revision: dc653acd412ac6b3d538394a53481bd5c3c11f4c
   branch: develop
   specs:
     goo (0.0.2)
@@ -11,12 +11,11 @@ GIT
       rest-client
       rsolr
       sparql-client
-      systemu
       uuid
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: ed6666eee52e973ebe43360c08c9692902a719b4
+  revision: 983516900a08e83e59fe3649187107cddee025f0
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -139,7 +138,7 @@ GEM
     tzinfo (0.3.60)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.8)
+    unf_ext (0.0.8.1)
     uuid (2.3.9)
       macaddr (~> 1.0)
 
