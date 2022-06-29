@@ -222,7 +222,6 @@ module Annotator
                 class_keys.each { |key| pipeline.expire(key, key_expire_time) }
               end
               redis.ltrim(key_storage, CHUNK_SIZE + 1, -1) # Remove what we just deleted
-              redis.ltrim(key_storage, CHUNK_SIZE + 1, -1) # Remove what we just deleted
               class_keys = redis.lrange(key_storage, 0, CHUNK_SIZE) # Get next chunk
             end
           else
