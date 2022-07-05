@@ -218,9 +218,9 @@ module Annotator
 
             while !class_keys.empty?
               # use expire instead of del to allow potential clients to finish using the data
-              redis.pipelined {
-                class_keys.each {|key| redis.expire(key, key_expire_time)}
-              }
+              redis.pipelined do |pipeline|
+                class_keys.each { |key| pipeline.expire(key, key_expire_time) }
+              end
               redis.ltrim(key_storage, CHUNK_SIZE + 1, -1) # Remove what we just deleted
               class_keys = redis.lrange(key_storage, 0, CHUNK_SIZE) # Get next chunk
             end
@@ -443,12 +443,12 @@ module Annotator
         redis_data = Hash.new
         cur_inst = redis_current_instance()
 
-        redis.pipelined {
+        redis.pipelined do |pipeline|
           rawAnnotations.each do |ann|
             id = get_prefixed_id(cur_inst, ann.string_id)
-            redis_data[id] = { future: redis.hgetall(id) }
+            redis_data[id] = {future: pipeline.hgetall(id)}
           end
-        }
+        end
         sleep(1.0 / 150.0)
         redis_data.each do |k, v|
           while v[:future].value.is_a?(Redis::FutureNotReady)
