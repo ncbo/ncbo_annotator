@@ -1,10 +1,10 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: dc653acd412ac6b3d538394a53481bd5c3c11f4c
-  branch: develop
+  revision: fd7d45cb862c5c2c1833b64a5c8c14154384edc2
+  branch: master
   specs:
     goo (0.0.2)
-      addressable (= 2.3.5)
+      addressable (~> 2.8)
       pry
       rdf (= 1.0.8)
       redis
@@ -15,8 +15,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 138dad00e5ab90e2568529517ec988839450a870
-  branch: develop
+  revision: 5d0176d97d740ab5c7213980448019e44cf5574c
+  branch: master
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -36,7 +36,7 @@ GIT
 GIT
   remote: https://github.com/ncbo/sparql-client.git
   revision: fb4a89b420f8eb6dda5190a126b6c62e32c4c0c9
-  branch: develop
+  branch: master
   specs:
     sparql-client (1.0.1)
       json_pure (>= 1.4)
@@ -52,8 +52,9 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.3.5)
-    bcrypt (3.1.17)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.18)
     builder (3.2.4)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
@@ -85,13 +86,13 @@ GEM
     faraday-retry (1.0.3)
     ffi (1.15.5)
     http-accept (1.7.0)
-    http-cookie (1.0.4)
+    http-cookie (1.0.5)
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    json (2.6.1)
-    json_pure (2.6.1)
-    libxml-ruby (3.2.2)
+    json (2.6.2)
+    json_pure (2.6.2)
+    libxml-ruby (3.2.3)
     logger (1.5.1)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
@@ -115,9 +116,10 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    rack (2.2.3)
-    rack-test (1.1.0)
-      rack (>= 1.0, < 3)
+    public_suffix (4.0.7)
+    rack (2.2.4)
+    rack-test (2.0.2)
+      rack (>= 1.3)
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
@@ -138,7 +140,7 @@ GEM
     tzinfo (0.3.60)
     unf (0.1.4)
       unf_ext
-    unf_ext (0.0.8.1)
+    unf_ext (0.0.8.2)
     uuid (2.3.9)
       macaddr (~> 1.0)
 
