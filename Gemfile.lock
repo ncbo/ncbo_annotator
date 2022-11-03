@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 7fe22f03b56a944822c986269076a2e2aa64d6a2
+  revision: 091e0ca001244a7dbaed0644b0b1087a3a24d16a
   branch: develop
   specs:
     goo (0.0.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 53cd329b4a4a5fa4c4294cf4fe2dd43b0d748948
+  revision: a00dac9a0825697cb7f6ac5e0f4db6ab8f4bae79
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -52,16 +52,17 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     bcrypt (3.1.18)
     builder (3.2.4)
     coderay (1.1.3)
     concurrent-ruby (1.1.10)
+    connection_pool (2.3.0)
     cube-ruby (0.0.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    faraday (1.10.0)
+    faraday (1.10.2)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -92,7 +93,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.6.2)
     json_pure (2.6.2)
-    libxml-ruby (3.2.3)
+    libxml-ruby (3.2.4)
     logger (1.5.1)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
@@ -116,14 +117,17 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (4.0.7)
-    rack (2.2.4)
+    public_suffix (5.0.0)
+    rack (3.0.0)
     rack-test (2.0.2)
       rack (>= 1.3)
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
-    redis (4.7.1)
+    redis (5.0.5)
+      redis-client (>= 0.9.0)
+    redis-client (0.11.0)
+      connection_pool
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -163,4 +167,4 @@ DEPENDENCIES
   sparql-client!
 
 BUNDLED WITH
-   2.3.11
+   2.3.15
