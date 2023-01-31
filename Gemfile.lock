@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 091e0ca001244a7dbaed0644b0b1087a3a24d16a
+  revision: 15023141f6051d4fa6cba6081d082c720327b0c9
   branch: develop
   specs:
     goo (0.0.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: a00dac9a0825697cb7f6ac5e0f4db6ab8f4bae79
+  revision: d7425e581d35b265a0263faba7c32c0fdb51cbba
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -57,12 +57,13 @@ GEM
     bcrypt (3.1.18)
     builder (3.2.4)
     coderay (1.1.3)
-    concurrent-ruby (1.1.10)
+    concurrent-ruby (1.2.0)
     connection_pool (2.3.0)
     cube-ruby (0.0.3)
+    date (3.3.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    faraday (1.10.2)
+    faraday (1.10.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -91,14 +92,17 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    json (2.6.2)
-    json_pure (2.6.2)
-    libxml-ruby (3.2.4)
-    logger (1.5.1)
+    json (2.6.3)
+    json_pure (2.6.3)
+    libxml-ruby (4.0.0)
+    logger (1.5.3)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
-    mail (2.7.1)
+    mail (2.8.0.1)
       mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
     method_source (1.0.0)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
@@ -106,27 +110,36 @@ GEM
     mini_mime (1.1.2)
     minitest (4.7.5)
     multi_json (1.15.0)
-    multipart-post (2.2.3)
+    multipart-post (2.3.0)
     net-http-persistent (2.9.4)
+    net-imap (0.3.4)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.1)
+      timeout
+    net-smtp (0.3.3)
+      net-protocol
     netrc (0.11.0)
     oj (2.18.5)
     omni_logger (0.1.4)
       logger
     pony (1.13.1)
       mail (>= 2.0)
-    pry (0.14.1)
+    pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (5.0.0)
-    rack (3.0.0)
+    public_suffix (5.0.1)
+    rack (3.0.4.1)
     rack-test (2.0.2)
       rack (>= 1.3)
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
-    redis (5.0.5)
+    redis (5.0.6)
       redis-client (>= 0.9.0)
-    redis-client (0.11.0)
+    redis-client (0.12.1)
       connection_pool
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -141,6 +154,7 @@ GEM
     rubyzip (2.3.2)
     systemu (2.6.5)
     thread_safe (0.3.6)
+    timeout (0.3.1)
     tzinfo (0.3.61)
     unf (0.1.4)
       unf_ext
