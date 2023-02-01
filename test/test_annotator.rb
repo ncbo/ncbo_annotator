@@ -397,7 +397,7 @@ class TestAnnotator < TestCase
         expand_with_mappings: false,
         min_term_size: 10,
         whole_word_only: true,
-        with_synonyms: true
+        with_synonyms: false
     })
 
     direct = annotations
