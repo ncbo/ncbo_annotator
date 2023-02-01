@@ -6,5 +6,6 @@
 docker-compose build
 #docker-compose up --exit-code-from unit-test
 
-docker-compose run --rm dev bundle exec rake test TESTOPTS='-v'
+docker-compose run --rm ruby bundle exec rake test TESTOPTS='-v'
+#docker-compose down
 docker-compose kill

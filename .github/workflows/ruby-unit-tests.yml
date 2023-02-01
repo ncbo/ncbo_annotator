@@ -8,10 +8,10 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: copy config file
       run: cp config/config.test.rb config/config.rb
     - name: Build docker-compose
       run: docker-compose build
     - name: Run unit tests
-      run: docker-compose run dev bundle exec rake test TESTOPTS='-v'
+      run: docker-compose run ruby bundle exec rake test TESTOPTS='-v'
