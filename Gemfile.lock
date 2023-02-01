@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 15023141f6051d4fa6cba6081d082c720327b0c9
-  branch: develop
+  revision: 919c20dec58375eb8a4dd1aed47864e2ad7bacfa
+  branch: master
   specs:
     goo (0.0.2)
       addressable (~> 2.8)
@@ -15,8 +15,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: e6372f193488a69ef0c2015017ace8a48274a326
-  branch: develop
+  revision: b22237dc0753ac3824ad60780ce386162142ebcd
+  branch: master
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -36,7 +36,7 @@ GIT
 GIT
   remote: https://github.com/ncbo/sparql-client.git
   revision: fb4a89b420f8eb6dda5190a126b6c62e32c4c0c9
-  branch: develop
+  branch: master
   specs:
     sparql-client (1.0.1)
       json_pure (>= 1.4)
