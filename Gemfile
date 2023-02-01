@@ -4,7 +4,7 @@ gem 'cube-ruby', require: 'cube'
 gem 'faraday', '~> 1.9'
 gem 'ffi'
 gem 'oj', '~> 2.0'
-gem 'rake', '~> 10.0'
+gem 'rake', '~> 12.3'
 gem 'redis'
 gem 'ruby-xxHash'
 
