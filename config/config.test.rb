@@ -12,7 +12,7 @@ REDIS_HOST = ENV.include?('REDIS_HOST') ? ENV['REDIS_HOST'] : 'localhost'
 REDIS_PORT = ENV.include?('REDIS_PORT') ? ENV['REDIS_PORT'] : 6379
 SOLR_HOST  = ENV.include?('SOLR_HOST')  ? ENV['SOLR_HOST']  : 'localhost'
 MGREP_HOST = ENV.include?('MGREP_HOST') ? ENV['MGREP_HOST'] : 'localhost'
-MGREP_PORT = ENV.include?('MGREP_PORT') ? ENV['MGREP_PORT'] : 55555
+MGREP_PORT = ENV.include?('MGREP_PORT') ? ENV['MGREP_PORT'] : 55556
 
 LinkedData.config do |config|
   config.goo_host                   = GOO_HOST.to_s

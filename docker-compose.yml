@@ -18,7 +18,7 @@ services:
       - REDIS_PORT=6379
       - SOLR_HOST=solr-ut
       - MGREP_HOST=mgrep-ut
-      - MGREP_PORT=55555
+      - MGREP_PORT=55556
     depends_on:
       - solr-ut
       - redis-ut
@@ -33,7 +33,7 @@ services:
     image: redis
 
   mgrep-ut:
-    image: ontoportal/mgrep-ncbo:0.1
+    image: ontoportal/mgrep:0.0.2
 
   4store-ut:
     image: bde2020/4store
