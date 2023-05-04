@@ -671,9 +671,9 @@ module Annotator
 
         # exclude single-character or empty/null values
         if (val.to_s.strip.length > 2)
-          id = get_prefixed_id_from_value(instance_prefix, val)
+          id = get_prefixed_id_from_value(instance_prefix, val.to_s)
           # populate dictionary structure
-          redis.hset(DICTHOLDER.call(instance_prefix), id, val)
+          redis.hset(DICTHOLDER.call(instance_prefix), id, val.to_s)
           entry = "#{label_type}#{LABEL_DELIM}#{ontResourceId}"
 
           # parse out semanticTypeCodes
