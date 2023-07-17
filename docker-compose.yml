@@ -27,7 +27,7 @@ services:
     command: "bundle exec rake test TESTOPTS='-v'"
 
   solr-ut:
-    image: ontoportal/solr-ut:0.1
+    image: ontoportal/solr-ut:0.0.2
 
   redis-ut:
     image: redis
@@ -37,6 +37,7 @@ services:
 
   4store-ut:
     image: bde2020/4store
+    platform: linux/amd64
     command: >
       bash -c "4s-backend-setup --segments 4 ontoportal_kb
       && 4s-backend ontoportal_kb
