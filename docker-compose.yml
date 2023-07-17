@@ -18,7 +18,7 @@ services:
       - REDIS_PORT=6379
       - SOLR_HOST=solr-ut
       - MGREP_HOST=mgrep-ut
-      - MGREP_PORT=55555
+      - MGREP_PORT=55556
     depends_on:
       - solr-ut
       - redis-ut
@@ -27,16 +27,17 @@ services:
     command: "bundle exec rake test TESTOPTS='-v'"
 
   solr-ut:
-    image: ontoportal/solr-ut:0.1
+    image: ontoportal/solr-ut:0.0.2
 
   redis-ut:
     image: redis
 
   mgrep-ut:
-    image: ontoportal/mgrep-ncbo:0.1
+    image: ontoportal/mgrep:0.0.2
 
   4store-ut:
     image: bde2020/4store
+    platform: linux/amd64
     command: >
       bash -c "4s-backend-setup --segments 4 ontoportal_kb
       && 4s-backend ontoportal_kb

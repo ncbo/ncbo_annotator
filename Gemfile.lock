@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 919c20dec58375eb8a4dd1aed47864e2ad7bacfa
+  revision: e8816b06244c26088ef0596ddc0623562a75a284
   branch: master
   specs:
     goo (0.0.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 546b3a45a6f359c09f0cc95d954f03e979b4847a
+  revision: d858e2e29e5da84c9741b7508efa235919642e46
   branch: master
   specs:
     ontologies_linked_data (0.0.1)
@@ -52,13 +52,13 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.8.1)
+    addressable (2.8.4)
       public_suffix (>= 2.0.2, < 6.0)
-    bcrypt (3.1.18)
+    bcrypt (3.1.19)
     builder (3.2.4)
     coderay (1.1.3)
-    concurrent-ruby (1.2.0)
-    connection_pool (2.3.0)
+    concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     cube-ruby (0.0.3)
     date (3.3.3)
     docile (1.4.0)
@@ -95,11 +95,11 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.6.3)
     json_pure (2.6.3)
-    libxml-ruby (4.0.0)
+    libxml-ruby (4.1.1)
     logger (1.5.3)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
-    mail (2.8.0.1)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -107,13 +107,13 @@ GEM
     method_source (1.0.0)
     mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2022.0105)
+    mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
     minitest (4.7.5)
     multi_json (1.15.0)
     multipart-post (2.3.0)
     net-http-persistent (2.9.4)
-    net-imap (0.3.4)
+    net-imap (0.3.6)
       date
       net-protocol
     net-pop (0.1.2)
@@ -123,7 +123,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     netrc (0.11.0)
-    oj (2.18.5)
+    oj (3.15.0)
     omni_logger (0.1.4)
       logger
     pony (1.13.1)
@@ -131,16 +131,16 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (5.0.1)
-    rack (3.0.4.1)
-    rack-test (2.0.2)
+    public_suffix (5.0.3)
+    rack (3.0.8)
+    rack-test (2.1.0)
       rack (>= 1.3)
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
     redis (5.0.6)
       redis-client (>= 0.9.0)
-    redis-client (0.12.1)
+    redis-client (0.14.1)
       connection_pool
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -165,8 +165,8 @@ GEM
     simplecov_json_formatter (0.1.4)
     systemu (2.6.5)
     thread_safe (0.3.6)
-    timeout (0.3.1)
-    tzinfo (0.3.61)
+    timeout (0.4.0)
+    tzinfo (0.3.62)
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.2)
@@ -183,7 +183,7 @@ DEPENDENCIES
   ffi
   goo!
   minitest (~> 4.0)
-  oj (~> 2.0)
+  oj (~> 3.0)
   ontologies_linked_data!
   pry
   rake (~> 10.0)
@@ -194,4 +194,4 @@ DEPENDENCIES
   sparql-client!
 
 BUNDLED WITH
-   2.3.15
+   2.4.17
