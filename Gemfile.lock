@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 911d71aefe433314d11398445e3856fca503b9c1
+  revision: 6db93bb3d5095a5fe0d017e572c5a04caa34ebc6
   branch: develop
   specs:
     goo (0.0.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: e33a0e451f8a8226d98291168e45b46d7065e670
+  revision: ff10e5ff4103431da1aec3cbbaebc57547c0035c
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -87,7 +87,7 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
-    ffi (1.15.5)
+    ffi (1.16.3)
     http-accept (1.7.0)
     http-cookie (1.0.5)
       domain_name (~> 0.5)
@@ -107,7 +107,7 @@ GEM
     method_source (1.0.0)
     mime-types (3.5.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2023.0808)
+    mime-types-data (3.2023.1003)
     mini_mime (1.1.5)
     minitest (4.7.5)
     multi_json (1.15.0)
@@ -120,7 +120,7 @@ GEM
       net-protocol
     net-protocol (0.2.1)
       timeout
-    net-smtp (0.3.3)
+    net-smtp (0.4.0)
       net-protocol
     netrc (0.11.0)
     oj (3.16.1)
@@ -138,9 +138,9 @@ GEM
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
-    redis (5.0.7)
-      redis-client (>= 0.9.0)
-    redis-client (0.17.0)
+    redis (5.0.8)
+      redis-client (>= 0.17.0)
+    redis-client (0.18.0)
       connection_pool
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
