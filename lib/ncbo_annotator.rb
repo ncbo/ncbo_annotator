@@ -725,7 +725,7 @@ module Annotator
       def hierarchy_query(class_ids)
         # mdorf, 12/14/2023: AllegroGraph throws a MalformedQuery exception
         # if an ID is not of the proper URI format
-        class_ids.select! { |id| id =~ URI::regexp }
+        class_ids.select! { |id| id =~ /\A#{URI::regexp}\z/ }
         filter_ids = class_ids.map { |id| "?id = <#{id}>" } .join " || "
         query = <<eos
 SELECT DISTINCT ?id ?parent ?graph WHERE { GRAPH ?graph { ?id <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?parent . }
