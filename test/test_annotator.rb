@@ -97,7 +97,7 @@ class TestAnnotator < TestCase
     assert @@redis.exists?(Annotator::Models::NcboAnnotator::MGREP_DICTIONARY_REFRESH_TIMESTAMP)
     assert @@redis.exists?(Annotator::Models::NcboAnnotator::LAST_MGREP_RESTART_TIMESTAMP)
     refresh_timestamp = @@redis.get(Annotator::Models::NcboAnnotator::MGREP_DICTIONARY_REFRESH_TIMESTAMP)
-    assert refresh_timestamp > start_timestamp
+    assert_operator refresh_timestamp, :>, start_timestamp
   end
 
   def test_mallet_recognizer
