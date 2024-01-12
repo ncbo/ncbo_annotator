@@ -7,6 +7,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        backend: ['ruby', 'ruby-agraph'] # api runs tests with 4store backend and api-agraph runs with AllegroGraph backend
     steps:
     - uses: actions/checkout@v3
     - name: copy config file
@@ -14,9 +18,11 @@ jobs:
     - name: Build docker-compose
       run: docker-compose build
     - name: Run unit tests
+      # unit tests are run inside a container
+      # http://docs.codecov.io/docs/testing-with-docker
       run: |
         ci_env=`bash <(curl -s https://codecov.io/env)`
-        docker-compose run $ci_env -e CI ruby bundle exec rake test TESTOPTS='-v'
+        docker-compose run $ci_env -e CI ${{ matrix.backend }} bundle exec rake test TESTOPTS='-v'
     - name: Upload coverage reports to Codecov
       uses: codecov/codecov-action@v3
       with:

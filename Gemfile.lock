@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 657149d6b33813253fa7440252f69c04e0631190
+  revision: 75436fe8e387febc53e34ee31ff0e6dd837a9d3f
   branch: master
   specs:
     goo (0.0.2)
@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 7783784f9d2ceada9be706cf6c084d272ae653e8
+  revision: ee0013f0ee23876076bff9d9258b46371ec3b248
   branch: master
   specs:
     ontologies_linked_data (0.0.1)
@@ -63,7 +63,7 @@ GEM
     cube-ruby (0.0.3)
     date (3.3.4)
     docile (1.4.0)
-    domain_name (0.6.20231109)
+    domain_name (0.6.20240107)
     faraday (1.10.3)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
@@ -95,7 +95,7 @@ GEM
       concurrent-ruby (~> 1.0)
     json (2.7.1)
     json_pure (2.7.1)
-    libxml-ruby (4.1.2)
+    libxml-ruby (5.0.2)
     logger (1.6.0)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
@@ -105,7 +105,7 @@ GEM
       net-pop
       net-smtp
     method_source (1.0.0)
-    mime-types (3.5.1)
+    mime-types (3.5.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.1205)
     mini_mime (1.1.5)
@@ -113,14 +113,14 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.3.0)
     net-http-persistent (2.9.4)
-    net-imap (0.4.8)
+    net-imap (0.4.9.1)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0)
+    net-smtp (0.4.0.1)
       net-protocol
     netrc (0.11.0)
     oj (3.16.3)
@@ -141,7 +141,7 @@ GEM
       addressable (>= 2.2)
     redis (5.0.8)
       redis-client (>= 0.17.0)
-    redis-client (0.19.0)
+    redis-client (0.19.1)
       connection_pool
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
@@ -192,4 +192,4 @@ DEPENDENCIES
   sparql-client!
 
 BUNDLED WITH
-   2.3.15
+   2.4.22
