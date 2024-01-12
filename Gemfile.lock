@@ -15,7 +15,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: e716a6d410883a8e59121e7d09d2c80a6f6ab1fc
+  revision: 4b6b7f42882b9ad815ff5e90c354212aca085fda
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -113,7 +113,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.3.0)
     net-http-persistent (2.9.4)
-    net-imap (0.3.7)
+    net-imap (0.4.9.1)
       date
       net-protocol
     net-pop (0.1.2)
@@ -192,4 +192,4 @@ DEPENDENCIES
   sparql-client!
 
 BUNDLED WITH
-   2.3.15
+   2.4.22
