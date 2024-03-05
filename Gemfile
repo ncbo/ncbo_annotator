@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cube-ruby'
-gem 'faraday', '~> 1.9'
+gem 'faraday'
 gem 'ffi'
 gem 'oj', '~> 3.0'
 gem 'rake', '~> 10.0'

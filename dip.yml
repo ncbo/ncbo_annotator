@@ -1,0 +1,56 @@
+version: '7.1'
+
+# Define default environment variables to pass
+# to Docker Compose
+#environment:
+#  RAILS_ENV: development
+
+compose:
+  files:
+    - docker-compose.yml
+      #  project_name: ncbo_annotator
+
+interaction:
+  # This command spins up a ontologies_api container with the required dependencies (solr, 4store, etc),
+  # and opens a terminal within it.
+  runner:
+    description: Open a Bash shell within a ontologies_api container (with dependencies up)
+    service: ruby
+    command: /bin/bash
+
+  # Run a Rails container without any dependent services (useful for non-Rails scripts)
+  bash:
+    description: Run an arbitrary script within a container (or open a shell without deps)
+    service: ruby
+    command: /bin/bash
+    compose_run_options: [ no-deps ]
+
+  # A shortcut to run Bundler commands
+  bundle:
+    description: Run Bundler commands
+    service: ruby
+    command: bundle
+    compose_run_options: [ no-deps ]
+
+  # A shortcut to run unit tests
+  test:
+    description: Run minitest unit tests
+    service: ruby
+    command: bundle exec rake test
+
+  test-ag:
+    description: Run minitest unit tests
+    service: ruby-ag
+    command: bundle exec rake test
+
+
+  'redis-cli':
+    description: Run Redis console
+    service: redis-ut
+    command: redis-cli -h redis-ut
+
+#provision:
+  #- dip compose down --volumes
+  #- dip compose up -d solr 4store
+  #- dip bundle install
+  #- dip bash -c bin/setup
