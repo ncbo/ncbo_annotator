@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: c7ee4a6a44cdf69c8186decc5da0c80887af1b11
+  revision: 563a47fa4329ffb8a774731be210f44a054726c0
   branch: develop
   specs:
     goo (0.0.2)
@@ -8,6 +8,7 @@ GIT
       pry
       rdf (= 1.0.8)
       redis
+      request_store
       rest-client
       rsolr
       sparql-client
@@ -15,7 +16,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: d885010c4dcb79a71fd161988a8feceb77331b58
+  revision: ab7b2f0eb6c4256ff1a01ace55b5a966c040e1ca
   branch: develop
   specs:
     ontologies_linked_data (0.0.1)
@@ -113,7 +114,7 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.4.0)
     net-http-persistent (2.9.4)
-    net-imap (0.3.7)
+    net-imap (0.4.10)
       date
       net-protocol
     net-pop (0.1.2)
@@ -143,6 +144,8 @@ GEM
       redis-client (>= 0.22.0)
     redis-client (0.22.1)
       connection_pool
+    request_store (1.6.0)
+      rack (>= 1.4)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
@@ -192,4 +195,4 @@ DEPENDENCIES
   sparql-client!
 
 BUNDLED WITH
-   2.3.15
+   2.4.22
