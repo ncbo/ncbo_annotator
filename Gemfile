@@ -1,11 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cube-ruby'
-gem 'faraday', '~> 1.9'
-gem 'ffi'
-gem 'oj', '~> 3.0'
 gem 'rake', '~> 10.0'
-gem 'redis'
 gem 'ruby-xxHash'
 
 group :development do
