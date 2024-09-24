@@ -142,10 +142,10 @@ module Annotator
           end
 
           outFile.close
-          redis_mgrep_dict_refresh_timestamp()
+          redis_mgrep_dict_refresh_timestamp
         end
 
-        @logger.info("Completed generating a dictionary file in #{(time/60).round(1)} minutes.")
+        @logger.info("Completed generating a dictionary file in #{time.round(2)} seconds.")
       end
 
       def create_term_cache_from_ontologies(ontologies, delete_cache=false, redis_prefix=nil)
