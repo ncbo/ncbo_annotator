@@ -48,8 +48,8 @@ class AnnotatorUnit < MiniTest::Unit
   def before_suites
     # code to run before the very first test
     LinkedData::SampleData::Ontology.delete_ontologies_and_submissions
-    @@ontologies = LinkedData::SampleData::Ontology.sample_owl_ontologies
-    @@sty = LinkedData::SampleData::Ontology.load_semantic_types_ontology
+    @@ontologies = LinkedData::SampleData::Ontology.sample_owl_ontologies(process_submission: true)
+    @@sty = LinkedData::SampleData::Ontology.load_semantic_types_ontology(process_submission: true)
     annotator = Annotator::Models::NcboAnnotator.new
     annotator.init_redis_for_tests
     annotator.create_term_cache_from_ontologies(@@ontologies, true)

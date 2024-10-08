@@ -1,13 +1,14 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 75436fe8e387febc53e34ee31ff0e6dd837a9d3f
-  branch: master
+  revision: 70007faf43d0d96292809f89f15a27a757ccaa25
+  branch: develop
   specs:
     goo (0.0.2)
       addressable (~> 2.8)
       pry
       rdf (= 1.0.8)
       redis
+      request_store
       rest-client
       rsolr
       sparql-client
@@ -15,8 +16,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: ee0013f0ee23876076bff9d9258b46371ec3b248
-  branch: master
+  revision: c30887ee907acd39500cae6c12f45edb06fe0802
+  branch: develop
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -35,8 +36,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/sparql-client.git
-  revision: d418d56a6c9ff5692f925b45739a2a1c66bca851
-  branch: master
+  revision: 1657f0dd69fd4b522d3549a6848670175f5e98cc
+  branch: develop
   specs:
     sparql-client (1.0.1)
       json_pure (>= 1.4)
@@ -52,51 +53,34 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.8.6)
-      public_suffix (>= 2.0.2, < 6.0)
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
+    base64 (0.2.0)
     bcrypt (3.1.20)
-    bigdecimal (3.1.5)
-    builder (3.2.4)
+    bigdecimal (3.1.8)
+    builder (3.3.0)
     coderay (1.1.3)
-    concurrent-ruby (1.2.2)
+    concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     cube-ruby (0.0.3)
     date (3.3.4)
-    docile (1.4.0)
+    docile (1.4.1)
     domain_name (0.6.20240107)
-    faraday (1.10.3)
-      faraday-em_http (~> 1.0)
-      faraday-em_synchrony (~> 1.0)
-      faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0)
-      faraday-multipart (~> 1.0)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.0)
-      faraday-patron (~> 1.0)
-      faraday-rack (~> 1.0)
-      faraday-retry (~> 1.0)
+    faraday (2.8.1)
+      base64
+      faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
-    faraday-em_http (1.0.0)
-    faraday-em_synchrony (1.0.0)
-    faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
-    faraday-multipart (1.0.4)
-      multipart-post (~> 2)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
-    faraday-rack (1.0.0)
-    faraday-retry (1.0.3)
-    ffi (1.16.3)
+    faraday-net_http (3.0.2)
+    ffi (1.17.0)
     http-accept (1.7.0)
-    http-cookie (1.0.5)
+    http-cookie (1.0.7)
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    json (2.7.1)
-    json_pure (2.7.1)
-    libxml-ruby (5.0.2)
-    logger (1.6.0)
+    json (2.7.2)
+    json_pure (2.7.2)
+    libxml-ruby (5.0.3)
+    logger (1.6.1)
     macaddr (1.7.2)
       systemu (~> 2.6.5)
     mail (2.8.1)
@@ -104,52 +88,55 @@ GEM
       net-imap
       net-pop
       net-smtp
-    method_source (1.0.0)
+    method_source (1.1.0)
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2023.1205)
+    mime-types-data (3.2024.0903)
     mini_mime (1.1.5)
     minitest (4.7.5)
     multi_json (1.15.0)
-    multipart-post (2.3.0)
     net-http-persistent (2.9.4)
-    net-imap (0.4.9.1)
+    net-imap (0.4.16)
       date
       net-protocol
     net-pop (0.1.2)
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-smtp (0.4.0.1)
+    net-smtp (0.5.0)
       net-protocol
     netrc (0.11.0)
-    oj (3.16.3)
+    oj (3.16.6)
       bigdecimal (>= 3.0)
+      ostruct (>= 0.2)
     omni_logger (0.1.4)
       logger
+    ostruct (0.6.0)
     pony (1.13.1)
       mail (>= 2.0)
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (5.0.4)
-    rack (3.0.8)
+    public_suffix (5.1.1)
+    rack (3.1.7)
     rack-test (2.1.0)
       rack (>= 1.3)
     rake (10.5.0)
     rdf (1.0.8)
       addressable (>= 2.2)
-    redis (5.0.8)
-      redis-client (>= 0.17.0)
-    redis-client (0.19.1)
+    redis (5.3.0)
+      redis-client (>= 0.22.0)
+    redis-client (0.22.2)
       connection_pool
+    request_store (1.7.0)
+      rack (>= 1.4)
     rest-client (2.1.0)
       http-accept (>= 1.7.0, < 2.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.2.6)
-    rsolr (2.5.0)
+    rexml (3.3.7)
+    rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
     ruby-xxHash (0.4.0.2)
@@ -162,7 +149,7 @@ GEM
     simplecov-cobertura (2.1.0)
       rexml
       simplecov (~> 0.19)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
     systemu (2.6.5)
     thread_safe (0.3.6)
@@ -172,12 +159,13 @@ GEM
       macaddr (~> 1.0)
 
 PLATFORMS
-  ruby
+  aarch64-linux
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
   cube-ruby
-  faraday (~> 1.9)
+  faraday
   ffi
   goo!
   minitest (~> 4.0)
@@ -185,7 +173,6 @@ DEPENDENCIES
   ontologies_linked_data!
   pry
   rake (~> 10.0)
-  redis
   ruby-xxHash
   simplecov
   simplecov-cobertura

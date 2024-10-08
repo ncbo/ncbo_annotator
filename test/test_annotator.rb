@@ -71,6 +71,7 @@ class TestAnnotator < TestCase
 
   def test_generate_dictionary_file
     start_timestamp = Time.now
+    sleep(1)
     ontologies = AnnotatorUnit.ontologies.dup
     class_pages = TestAnnotator.all_classes(ontologies)
     assert class_pages.length > 100, "No classes in system ???"
