@@ -14,7 +14,6 @@ require_relative 'annotation'
 require_relative 'ncbo_annotator/mgrep/mgrep'
 require_relative 'ncbo_annotator/config'
 require_relative 'ncbo_annotator/monkeypatches'
-require_relative 'ncbo_recommender'
 
 # Require all models
 project_root = File.dirname(File.absolute_path(__FILE__))
