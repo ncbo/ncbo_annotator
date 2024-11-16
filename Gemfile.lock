@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: f943ac33e87c55c88131c32d826ed5d39c89302c
-  branch: master
+  revision: 35721855ba808517698d8b94eb38d4553001c4b6
+  branch: develop
   specs:
     goo (0.0.2)
       addressable (~> 2.8)
@@ -16,8 +16,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 9ab4be437ed84f5a480e7f0d8799824fcea310ae
-  branch: master
+  revision: db05a3b22c4187fb73dd83312a038fb7f7741271
+  branch: develop
   specs:
     ontologies_linked_data (0.0.1)
       activesupport
@@ -36,8 +36,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/sparql-client.git
-  revision: e89c26aa96f184dbe9b52d51e04fb3d9ba998dbc
-  branch: master
+  revision: 1657f0dd69fd4b522d3549a6848670175f5e98cc
+  branch: develop
   specs:
     sparql-client (1.0.1)
       json_pure (>= 1.4)
@@ -63,7 +63,7 @@ GEM
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
     cube-ruby (0.0.3)
-    date (3.3.4)
+    date (3.4.0)
     docile (1.4.1)
     domain_name (0.6.20240107)
     faraday (2.8.1)
@@ -77,8 +77,8 @@ GEM
       domain_name (~> 0.5)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
-    json (2.7.2)
-    json_pure (2.7.2)
+    json (2.8.2)
+    json_pure (2.8.1)
     libxml-ruby (5.0.3)
     logger (1.6.1)
     macaddr (1.7.2)
@@ -92,12 +92,12 @@ GEM
     mime-types (3.6.0)
       logger
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.1001)
+    mime-types-data (3.2024.1105)
     mini_mime (1.1.5)
     minitest (4.7.5)
     multi_json (1.15.0)
     net-http-persistent (2.9.4)
-    net-imap (0.4.16)
+    net-imap (0.4.18)
       date
       net-protocol
     net-pop (0.1.2)
@@ -107,19 +107,19 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     netrc (0.11.0)
-    oj (3.16.6)
+    oj (3.16.7)
       bigdecimal (>= 3.0)
       ostruct (>= 0.2)
     omni_logger (0.1.4)
       logger
-    ostruct (0.6.0)
+    ostruct (0.6.1)
     pony (1.13.1)
       mail (>= 2.0)
-    pry (0.14.2)
+    pry (0.15.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (5.1.1)
-    rack (3.1.7)
+    rack (3.1.8)
     rack-test (2.1.0)
       rack (>= 1.3)
     rake (10.5.0)
@@ -136,7 +136,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
-    rexml (3.3.8)
+    rexml (3.3.9)
     rsolr (2.6.0)
       builder (>= 2.1.2)
       faraday (>= 0.9, < 3, != 2.0.0)
@@ -154,7 +154,7 @@ GEM
     simplecov_json_formatter (0.1.4)
     systemu (2.6.5)
     thread_safe (0.3.6)
-    timeout (0.4.1)
+    timeout (0.4.2)
     tzinfo (0.3.62)
     uuid (2.3.9)
       macaddr (~> 1.0)
