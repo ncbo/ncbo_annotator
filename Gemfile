@@ -15,6 +15,6 @@ group :development do
 end
 
 # NCBO gems (can be from a local dev path or from rubygems/git)
-gem 'goo', github: 'ncbo/goo', branch: 'master'
-gem 'ontologies_linked_data', github: 'ncbo/ontologies_linked_data', branch: 'master'
-gem 'sparql-client', github: 'ncbo/sparql-client', branch: 'master'
+gem 'goo', github: 'ncbo/goo', branch: 'develop'
+gem 'ontologies_linked_data', github: 'ncbo/ontologies_linked_data', branch: 'develop'
+gem 'sparql-client', github: 'ncbo/sparql-client', branch: 'develop'
