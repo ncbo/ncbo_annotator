@@ -80,7 +80,7 @@ services:
       retries: 10
 
   mgrep-ut:
-    image: ontoportal/mgrep:0.0.2
+    image: ontoportal/mgrep:0.0.3
     platform: linux/amd64
     healthcheck:
       test: ["CMD", "nc", "-z", "-v", "127.0.0.1", "55556"]
