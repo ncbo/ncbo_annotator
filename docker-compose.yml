@@ -1,13 +1,13 @@
 x-app: &app
-  image: ncbo_annotator:0.0.1
+  image: ncbo_annotator:0.0.2
   build:
     context: .
     args:
-      RUBY_VERSION: '3.0'
+      RUBY_VERSION: '3.1'
   environment: &env
     # default bundle config resolves to /usr/local/bundle/config inside of the container
     # we are setting it to local app directory if we need to use 'bundle config local'
-    BUNDLE_APP_CONFIG: /srv/ontoportal/ncbo_annotator/.bundle
+    BUNDLE_APP_CONFIG: /.bundle
     BUNDLE_PATH: /bundle
     COVERAGE: 'true' # enable simplecov code coverage
     REDIS_HOST: redis-ut
@@ -17,7 +17,7 @@ x-app: &app
     SOLR_TERM_SEARCH_URL: http://solr-ut:8983/solr/term_search_core1
     SOLR_PROP_SEARCH_URL: http://solr-ut:8983/solr/prop_search_core1
   volumes:
-    - .:/srv/ontoportal/ncbo_annotator
+    - .:/app
     - bundle:/bundle
   stdin_open: true
   tty: true
