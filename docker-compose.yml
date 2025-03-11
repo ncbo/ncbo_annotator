@@ -1,14 +1,10 @@
 x-app: &app
-  image: ncbo_annotator:0.0.2
+  image: ncbo_annotator:0.0.3
   build:
     context: .
     args:
       RUBY_VERSION: '3.1'
   environment: &env
-    # default bundle config resolves to /usr/local/bundle/config inside of the container
-    # we are setting it to local app directory if we need to use 'bundle config local'
-    BUNDLE_APP_CONFIG: /.bundle
-    BUNDLE_PATH: /bundle
     COVERAGE: 'true' # enable simplecov code coverage
     REDIS_HOST: redis-ut
     REDIS_PORT: 6379
@@ -18,7 +14,7 @@ x-app: &app
     SOLR_PROP_SEARCH_URL: http://solr-ut:8983/solr/prop_search_core1
   volumes:
     - .:/app
-    - bundle:/bundle
+    - bundle:/usr/local/bundle
   stdin_open: true
   tty: true
   command: "bundle exec rake test TESTOPTS='-v'"
@@ -100,7 +96,7 @@ services:
       - 4store
 
   agraph-ut:
-    image: franzinc/agraph:v8.2.0
+    image: franzinc/agraph:v8.3.1
     platform: linux/amd64
     environment:
       - AGRAPH_SUPER_USER=test

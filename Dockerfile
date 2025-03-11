@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /app
 
 # Use a dedicated bundle path
-ENV BUNDLE_PATH=/bundle
-ENV GEM_HOME=/bundle
+ENV BUNDLE_PATH=/usr/local/bundle
+ENV GEM_HOME=/usr/local/bundle
 ENV PATH="$BUNDLE_PATH/bin:$PATH"
 
 COPY Gemfile* *.gemspec ./
@@ -31,7 +31,7 @@ RUN if [ -f Gemfile.lock ]; then \
       gem install bundler; \
     fi
 
-RUN bundle config set --local path '/bundle'
+RUN bundle config set --local path '/usr/local/bundle'
 RUN bundle config set --global no-document 'true'
 RUN bundle install --jobs 4 --retry 3
 
