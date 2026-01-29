@@ -412,7 +412,7 @@ module Annotator
         if expand_with_mappings
           expand_mappings(annotations, ontologies)
         end
-        return annotations.values
+        annotations.values
       end
 
       def annotate_direct(text, options={})
@@ -555,6 +555,9 @@ module Annotator
             id = sol[:id].to_s
             parent = sol[:parent].to_s
             ontology = sol[:graph].to_s
+            # fix: issue with virtuoso graphs included in the query
+            next unless ontology.include?("ontologies")
+
             ontology = ontology[0..ontology.index("submissions")-2]
             id_group = ontology + id
 
@@ -602,7 +605,7 @@ module Annotator
       def get_prefixed_id_from_value(instance_prefix, val)
         # NCBO-696 - Remove case-sensitive variations on terms in annotator dictionary
         intId = unsigned_to_signed(XXhash.xxh64(val.upcase, 112233))
-        return get_prefixed_id(instance_prefix, intId)
+        get_prefixed_id(instance_prefix, intId)
       end
 
       ##
@@ -661,11 +664,12 @@ module Annotator
       def create_term_entry(redis, instance_prefix, ontResourceId, resourceId, label_type, val, semanticTypes)
         begin
           # NCBO-696 - Remove case-sensitive variations on terms in annotator dictionary
-          val.to_s.upcase!()
-        rescue ArgumentError => e
+          val = val.dup.upcase
+        rescue ArgumentError
+          val = val.dup
           # NCBO-832 - SCTSPA Annotator Cache building error (UTF-8)
           val = val.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: '')
-          val.to_s.upcase!()
+          val = val.upcase
         end
 
         # exclude single-character or empty/null values
@@ -679,7 +683,7 @@ module Annotator
           # always append them back to the original value
           semanticTypeCodes = get_semantic_type_codes(semanticTypes)
           semanticTypeCodes = (semanticTypeCodes.empty?) ? "" :
-                                  "#{DATA_TYPE_DELIM}#{semanticTypeCodes}"
+                                "#{DATA_TYPE_DELIM}#{semanticTypeCodes}"
           matches = redis.hget(id, resourceId)
 
           if (matches.nil?)
@@ -709,16 +713,15 @@ module Annotator
           semanticTypeCodes << val
           i += 1
         end
-        return semanticTypeCodes
+        semanticTypeCodes
       end
 
       def get_prefixed_id(instance_prefix, intId)
-        return "#{IDPREFIX.call(instance_prefix)}#{intId}"
+        "#{IDPREFIX.call(instance_prefix)}#{intId}"
       end
 
       def mappings_for_class_ids(class_ids)
-        mappings = LinkedData::Mappings.mappings_for_classids(class_ids)
-        return mappings
+        LinkedData::Mappings.mappings_for_classids(class_ids)
       end
 
       def hierarchy_query(class_ids)
@@ -726,14 +729,13 @@ module Annotator
         # if an ID is not of the proper URI format
         class_ids.select! { |id| id =~ /\A#{URI::regexp}\z/ }
         filter_ids = class_ids.map { |id| "?id = <#{id}>" } .join " || "
-        query = <<eos
+        <<eos
 SELECT DISTINCT ?id ?parent ?graph WHERE { GRAPH ?graph { ?id <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?parent . }
 FILTER (#{filter_ids})
 FILTER (!isBlank(?parent))
 FILTER (?parent != <http://www.w3.org/2002/07/owl#Thing>)
 }
 eos
-       return query
       end
     end
   end
