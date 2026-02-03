@@ -13,8 +13,8 @@ REDIS_HOST       = ENV.include?('REDIS_HOST')       ? ENV['REDIS_HOST']       : 
 REDIS_PORT       = ENV.include?('REDIS_PORT')       ? ENV['REDIS_PORT']       : 6379
 MGREP_HOST       = ENV.include?('MGREP_HOST')       ? ENV['MGREP_HOST']       : 'localhost'
 MGREP_PORT       = ENV.include?('MGREP_PORT')       ? ENV['MGREP_PORT']       : 55556
-SOLR_TERM_SEARCH_URL = ENV.include?("SOLR_TERM_SEARCH_URL") ? ENV["SOLR_TERM_SEARCH_URL"] : "http://localhost:8983/solr/term_search_core1"
-SOLR_PROP_SEARCH_URL = ENV.include?("SOLR_PROP_SEARCH_URL") ? ENV["SOLR_PROP_SEARCH_URL"] : "http://localhost:8983/solr/prop_search_core1"
+SOLR_TERM_SEARCH_URL = ENV.include?("SOLR_TERM_SEARCH_URL") ? ENV["SOLR_TERM_SEARCH_URL"] : "http://localhost:8983/solr"
+SOLR_PROP_SEARCH_URL = ENV.include?("SOLR_PROP_SEARCH_URL") ? ENV["SOLR_PROP_SEARCH_URL"] : "http://localhost:8983/solr"
 
 
 LinkedData.config do |config|
