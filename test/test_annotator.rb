@@ -242,7 +242,7 @@ class TestAnnotator < TestCase
       annotations = annotator.annotate(text, {
           ontologies: [],
           semantic_types: [],
-          filter_integers: true,
+          filter_integers: false,
           expand_class_hierarchy: false,
           expand_hierarchy_levels: 0,
           expand_with_mappings: false,
@@ -752,7 +752,7 @@ class TestAnnotator < TestCase
         classes += page_classes
       end while !page.nil?
     end
-    return classes
+    return classes.sort_by { |c| c.prefLabel }
   end
 
 end
