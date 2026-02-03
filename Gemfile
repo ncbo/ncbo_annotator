@@ -3,11 +3,15 @@ source 'https://rubygems.org'
 gem 'faraday'
 gem 'ffi'
 gem 'oj', '~> 3.0'
-gem 'rake', '~> 10.0'
+gem 'rake'
+gem 'request_store'
+gem 'parallel'
 gem 'ruby-xxHash'
+gem 'activesupport'
 
-group :development do
-  gem 'minitest', '~> 4.0'
+group :test do
+  gem 'minitest'
+  gem 'minitest-reporters'
   gem 'pry'
   gem 'simplecov'
   gem 'simplecov-cobertura' # for codecov.io

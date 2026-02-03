@@ -77,7 +77,7 @@ class TestAnnotator < TestCase
     assert class_pages.length > 100, "No classes in system ???"
     annotator = Annotator::Models::NcboAnnotator.new
     annotator.generate_dictionary_file
-    assert File.exists?(Annotator.settings.mgrep_dictionary_file), "The dictionary file did not get created successfully"
+    assert File.exist?(Annotator.settings.mgrep_dictionary_file), "The dictionary file did not get created successfully"
     lines = File.readlines(Annotator.settings.mgrep_dictionary_file)
     cur_inst = annotator.redis_current_instance()
 
@@ -102,7 +102,7 @@ class TestAnnotator < TestCase
   end
 
   def test_mallet_recognizer
-    skip "Skipping Mallet recognizer test because the core Java APIs are not present" unless (File.exists?($ncbo_annotator_project_bin + "mallet.jar"))
+    skip "Skipping Mallet recognizer test because the core Java APIs are not present" unless (File.exist?($ncbo_annotator_project_bin + "mallet.jar"))
 
     count, acronyms, cogpo = LinkedData::SampleData::Ontology.create_ontologies_and_submissions({
         ont_count: 1,
