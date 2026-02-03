@@ -361,7 +361,7 @@ class TestAnnotator < TestCase
     annotations = annotator.annotate(text, {
         ontologies: [],
         semantic_types: [],
-        filter_integers: true,
+        filter_integers: false,
         expand_class_hierarchy: false,
         expand_hierarchy_levels: 0,
         expand_with_mappings: false,
@@ -379,7 +379,7 @@ class TestAnnotator < TestCase
     class_page.each do |cls|
       if cls.prefLabel.length > 2
         #TODO: This assertion may fail if the dictionary file on mgrep server does not contain the terms from the test ontologies
-        assert_operator 0, :<, (direct.select { |x| x.annotatedClass.id.to_s == cls.id.to_s }).length
+        assert_operator 0, :<, (direct.select { |x| x.annotatedClass.id.to_s == cls.id.to_s }).length, "expected to find #{cls.id}"
         found += 1
         if cls.prefLabel.length < 10
           filter_out_next << cls
