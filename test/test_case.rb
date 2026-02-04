@@ -15,7 +15,6 @@ if ENV['COVERAGE'] == 'true' || ENV['CI'] == 'true'
   end
 end
 
-require 'ontologies_linked_data'
 require_relative '../lib/ncbo_annotator'
 require_relative '../config/config'
 
