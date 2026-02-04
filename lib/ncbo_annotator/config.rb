@@ -11,9 +11,6 @@ module Annotator
 
   def config(&block)
     return if @settings_run
-    @settings_run = true
-
-    yield @settings if block_given?
 
     # Set defaults
     @settings.goo_port                   ||= 9000
@@ -43,6 +40,9 @@ module Annotator
 
     @settings.annotator_redis_prefix     ||= "c1:"
     @settings.annotator_redis_alt_prefix ||= "c2:"
+
+    yield @settings if block_given?
+    @settings_run = true
   end
 
 end

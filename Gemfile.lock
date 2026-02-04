@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 139bb2e327b576c4ec374ad6ceec553cd0de8d11
+  revision: 9282060c02a6ca242d9c4652e3f66799d3475d43
   branch: chore/ontoportal-lirmm-goo-compat
   specs:
     ontologies_linked_data (0.0.1)
