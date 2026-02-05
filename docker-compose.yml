@@ -3,7 +3,7 @@ x-app: &app
   build:
     context: .
     args:
-      RUBY_VERSION: '3.1'
+      RUBY_VERSION: '3.2'
   environment: &env
     COVERAGE: 'true' # enable simplecov code coverage
     REDIS_HOST: redis-ut
