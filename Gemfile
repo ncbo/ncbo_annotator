@@ -6,6 +6,8 @@ gem 'oj', '~> 3.0'
 gem 'rake'
 gem 'request_store'
 gem 'parallel'
+gem 'json-ld'
+gem 'jwt'
 gem 'ruby-xxHash'
 gem 'activesupport'
 
