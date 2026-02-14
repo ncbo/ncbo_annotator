@@ -2,7 +2,7 @@ require "pry"
 require "minitest/autorun"
 
 require_relative "../lib/ncbo_annotator.rb"
-require_relative "../config/config.rb"
+require_relative "../config/config.test"
 
 class TestMgrepClient < Minitest::Test
 
