@@ -38,13 +38,20 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
-          bundler-cache: true
+
+      - name: Checkout ontoportal_testkit
+        uses: actions/checkout@v4
+        with:
+          repository: alexskr/ontoportal_testkit
+          path: .tooling/ontoportal_testkit
 
       - name: Run unit tests in linux container
         env:
           CI: "true"
           TESTOPTS: "-v"
-        run: bundle exec rake test:docker:${{ matrix.backend }}:linux
+          BACKEND: ${{ matrix.backend }}
+        run: |
+          ruby -I .tooling/ontoportal_testkit/lib -e 'require "rake"; require "ontoportal/testkit/tasks"; Rake::Task["test:docker:#{ENV.fetch("BACKEND")}:linux"].invoke'
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v5
