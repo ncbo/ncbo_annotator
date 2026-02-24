@@ -1,0 +1,62 @@
+name: Docker Unit Tests
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  pull_request:
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      backends: ${{ steps.cfg.outputs.backends }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - id: cfg
+        name: Read backend matrix from .ontoportal-testkit.yml
+        run: |
+          BACKENDS=$(ruby -ryaml -rjson -e 'c=YAML.safe_load_file(".ontoportal-testkit.yml") || {}; b=c["backends"] || %w[fs ag vo gd]; puts JSON.generate(b)')
+          echo "backends=$BACKENDS" >> "$GITHUB_OUTPUT"
+
+  test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        backend: ${{ fromJson(needs.prepare.outputs.backends) }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby from .ruby-version
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: .ruby-version
+
+      - name: Checkout ontoportal_testkit
+        uses: actions/checkout@v4
+        with:
+          repository: alexskr/ontoportal_testkit
+          path: .tooling/ontoportal_testkit
+
+      - name: Run unit tests in linux container
+        env:
+          CI: "true"
+          TESTOPTS: "-v"
+          BACKEND: ${{ matrix.backend }}
+        run: |
+          ruby -I .tooling/ontoportal_testkit/lib -e 'require "rake"; require "ontoportal/testkit/tasks"; Rake::Task["test:docker:#{ENV.fetch("BACKEND")}:linux"].invoke'
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v5
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests,${{ matrix.backend }}
+          verbose: true
+          fail_ci_if_error: false

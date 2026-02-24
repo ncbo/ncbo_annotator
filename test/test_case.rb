@@ -16,7 +16,7 @@ if ENV['COVERAGE'] == 'true' || ENV['CI'] == 'true'
 end
 
 require_relative '../lib/ncbo_annotator'
-require_relative '../config/config'
+require_relative '../config/config.test'
 
 # Check to make sure you want to run if not pointed at localhost
 safe_host = Regexp.new(/localhost|-ut|ncbo-dev*|ncbo-unittest*/)

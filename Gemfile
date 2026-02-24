@@ -17,6 +17,7 @@ group :test do
   gem 'pry'
   gem 'simplecov'
   gem 'simplecov-cobertura' # for codecov.io
+  gem 'ontoportal_testkit', github: 'alexskr/ontoportal_testkit', branch: 'main'
 end
 
 # NCBO gems (can be from a local dev path or from rubygems/git)
