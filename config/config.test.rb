@@ -16,21 +16,23 @@ MGREP_PORT       = ENV.include?('MGREP_PORT')       ? ENV['MGREP_PORT']       : 
 SOLR_TERM_SEARCH_URL = ENV.include?("SOLR_TERM_SEARCH_URL") ? ENV["SOLR_TERM_SEARCH_URL"] : "http://localhost:8983/solr"
 SOLR_PROP_SEARCH_URL = ENV.include?("SOLR_PROP_SEARCH_URL") ? ENV["SOLR_PROP_SEARCH_URL"] : "http://localhost:8983/solr"
 
-
 LinkedData.config do |config|
-  config.goo_backend_name           = GOO_BACKEND_NAME.to_s
-  config.goo_host                   = GOO_HOST.to_s
-  config.goo_port                   = GOO_PORT.to_i
-  config.goo_path_query             = GOO_PATH_QUERY.to_s
-  config.goo_path_data              = GOO_PATH_DATA.to_s
-  config.goo_path_update            = GOO_PATH_UPDATE.to_s
-  config.search_server_url          = SOLR_TERM_SEARCH_URL.to_s
-  config.property_search_server_url = SOLR_PROP_SEARCH_URL.to_s
+ config.goo_backend_name           = GOO_BACKEND_NAME.to_s
+ config.goo_host                   = GOO_HOST.to_s
+ config.goo_port                   = GOO_PORT.to_s
+ config.goo_path_query             = GOO_PATH_QUERY.to_s
+ config.goo_path_data              = GOO_PATH_DATA.to_s
+ config.goo_path_update            = GOO_PATH_UPDATE.to_s
+ config.search_server_url          = SOLR_TERM_SEARCH_URL.to_s
+ config.property_search_server_url = SOLR_PROP_SEARCH_URL.to_s
 end
+
 Annotator.config do |config|
   config.mgrep_host            = MGREP_HOST.to_s
-  config.mgrep_port            = MGREP_PORT.to_i
+  config.mgrep_port            = MGREP_PORT.to_s
+  config.mgrep_alt_host        = MGREP_HOST.to_s
+  config.mgrep_alt_port        = MGREP_PORT.to_s
   config.mgrep_dictionary_file = './test/data/dictionary.txt'
   config.annotator_redis_host  = REDIS_HOST.to_s
-  config.annotator_redis_port  = REDIS_PORT.to_i
+  config.annotator_redis_port  = REDIS_PORT.to_s
 end
