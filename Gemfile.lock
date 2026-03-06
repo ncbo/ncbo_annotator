@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/alexskr/ontoportal_testkit.git
-  revision: 741b25d35ed3e3bdbdcbc55f4672a5258215ecdb
+  revision: 5138aa94c028ec97adeaf1f7a5ed9f1c40b12950
   branch: main
   specs:
     ontoportal_testkit (0.1.0)
@@ -384,4 +384,4 @@ CHECKSUMS
   uuid (2.3.9) sha256=aec0cf592053cd6e07c13c1ef94c440aba705f22eb1ee767b39631f2760124d7
 
 BUNDLED WITH
-  4.0.5
+  4.0.7
