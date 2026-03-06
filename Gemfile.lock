@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/alexskr/ontoportal_testkit.git
+  revision: 5138aa94c028ec97adeaf1f7a5ed9f1c40b12950
+  branch: main
+  specs:
+    ontoportal_testkit (0.1.0)
+      rake (>= 13.0)
+
+GIT
   remote: https://github.com/ncbo/goo.git
   revision: 13a8559a2346cc8320d7d36046646907bfa8a27c
   branch: ontoportal-lirmm-development
@@ -263,6 +271,7 @@ DEPENDENCIES
   minitest-reporters
   oj (~> 3.0)
   ontologies_linked_data!
+  ontoportal_testkit!
   parallel
   pry
   rake
@@ -335,6 +344,7 @@ CHECKSUMS
   oj (3.16.15) sha256=4d3324cac3e8fef54c0fa250b2af26a16dadd9f9788a1d6b1b2098b793a1b2cd
   omni_logger (0.1.4) sha256=b61596f7d96aa8426929e46c3500558d33e838e1afd7f4735244feb4d082bb3e
   ontologies_linked_data (0.0.1)
+  ontoportal_testkit (0.1.0)
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   pony (1.13.1) sha256=ab507c8ade8b35de96f1e75c0ae4566a3c40ac8a0d5101433969b6fd29c718a7
@@ -374,4 +384,4 @@ CHECKSUMS
   uuid (2.3.9) sha256=aec0cf592053cd6e07c13c1ef94c440aba705f22eb1ee767b39631f2760124d7
 
 BUNDLED WITH
-  4.0.5
+  4.0.7
