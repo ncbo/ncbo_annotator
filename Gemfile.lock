@@ -8,8 +8,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/goo.git
-  revision: 13a8559a2346cc8320d7d36046646907bfa8a27c
-  branch: ontoportal-lirmm-development
+  revision: 2411deb0143c773b9e6d89b3232c9cca0d50e2bd
+  branch: main
   specs:
     goo (0.0.2)
       addressable (~> 2.8)
@@ -26,7 +26,7 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/ontologies_linked_data.git
-  revision: 3204c0a830d344eb9ae1db82c22b46be1ef468b3
+  revision: e7310135a510369384204d873ba8b1c5039fcdbc
   branch: chore/ontoportal-lirmm-goo-compat
   specs:
     ontologies_linked_data (0.0.1)
@@ -48,8 +48,8 @@ GIT
 
 GIT
   remote: https://github.com/ncbo/sparql-client.git
-  revision: 2ac20b217bb7ad2b11305befe0ee77d75e44eac5
-  branch: ontoportal-lirmm-development
+  revision: fa69937120104bafb3d3b8350e4f2df2efb7c247
+  branch: main
   specs:
     sparql-client (3.2.2)
       net-http-persistent (~> 4.0, >= 4.0.2)
