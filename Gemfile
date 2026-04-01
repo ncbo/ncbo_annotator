@@ -21,6 +21,6 @@ group :test do
 end
 
 # NCBO gems (can be from a local dev path or from rubygems/git)
-gem 'goo', github: 'ncbo/goo', branch: 'main'
-gem 'ontologies_linked_data', github: 'ncbo/ontologies_linked_data', branch: 'chore/ontoportal-lirmm-goo-compat'
-gem 'sparql-client', github: 'ncbo/sparql-client', branch: 'main'
+gem 'goo', github: 'ncbo/goo', branch: 'development'
+gem 'ontologies_linked_data', github: 'ncbo/ontologies_linked_data', branch: 'develop'
+gem 'sparql-client', github: 'ncbo/sparql-client', branch: 'development'
