@@ -15,7 +15,7 @@ module Annotator
     # Set defaults
     @settings.goo_port                   ||= 9000
     @settings.goo_host                   ||= "localhost"
-    @settings.search_server_url          ||= "http://localhost:8983/solr/term_search_core1"
+    @settings.search_server_url          ||= "http://localhost:8983/solr"
     @settings.mgrep_dictionary_file      ||= "./test/tmp/dictionary.txt"
     @settings.mgrep_host                 ||= "localhost"
     @settings.mgrep_port                 ||= 55555
