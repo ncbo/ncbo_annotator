@@ -1,10 +1,9 @@
-require "pry"
-require "minitest/unit"
+require "minitest/autorun"
 
-require_relative "../lib/ncbo_annotator.rb"
-require_relative "../config/config.rb"
+require_relative "../lib/ncbo_annotator"
+require_relative "../config/config.test"
 
-class TestMgrepClient < MiniTest::Unit
+class TestMgrepClient < Minitest::Test
 
   def test_mgrep
     client = Annotator::Mgrep::Client.new(Annotator.settings.mgrep_host, Annotator.settings.mgrep_port, Annotator.settings.mgrep_alt_host, Annotator.settings.mgrep_alt_port)
