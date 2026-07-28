@@ -23,4 +23,3 @@ end
 # NCBO gems (can be from a local dev path or from rubygems/git)
 gem 'goo', github: 'ncbo/goo', branch: 'development'
 gem 'ontologies_linked_data', github: 'ncbo/ontologies_linked_data', branch: 'develop'
-gem 'sparql-client', github: 'ncbo/sparql-client', branch: 'development'
